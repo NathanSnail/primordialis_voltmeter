@@ -3,6 +3,6 @@
 #ifndef __unix__
 #include <windows.h>
 #else
-#include "WindowsHModular/include/win32/windows.h"
 #include "custom.h"
+#include "include/win32/windows.h"
 #endif
