@@ -1,4 +1,4 @@
-#include "windows_loader.h"
+#include "WindowsHModular/windows_loader.h"
 #include <stdio.h>
 #include <stdlib.h>
 DoesNothing;
@@ -10,7 +10,7 @@ static inline void *Address(size_t value) {
 }
 
 // this function will likely be removed in later versions of the modloader
-__declspec(dllexport) void init() {}
+__declspec(dllexport) void init() { MessageBoxA(NULL, "grr", "hia", MB_OK); }
 
 void testInjection() {
 	printf("test injection\n");
@@ -19,6 +19,7 @@ void testInjection() {
 }
 
 __declspec(dllexport) void detourInit(void (*DetourAttach)(void *, void *)) {
+	while (1) {}
 	freopen("CONOUT$", "w", stdout);
 	printf("detourInit voltmeter");
 	DetourAttach(NULL, NULL);
