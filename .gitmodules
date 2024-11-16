@@ -1,0 +1,3 @@
+[submodule "WindowsHLinux"]
+	path = WindowsHLinux
+	url = https://github.com/NathanSnail/WindowsHLinux.git
